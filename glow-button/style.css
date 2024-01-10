@@ -12,11 +12,12 @@
 }
 
 .button {
+    position:relative;
     display: inline-block;
     padding: 1em;
     text-align: center;
     color: #fff;
-    font-size: 25px;
+    font-size: 2em;
     cursor: pointer;
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
@@ -29,6 +30,7 @@ body {
 
 .button:hover {
     animation: animate 8s linear infinite;
+    box-shadow: 0 0 10px 0 white;
 }
 
 @keyframes animate {
@@ -41,17 +43,18 @@ body {
     }
 }
 
-.button::before {
+.button:hover:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: white;
     z-index: -1;
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
-    border-radius: 40px;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.button:hover::before {
+    border-radius: 60px;
     filter: blur(20px);
-    opacity: 1;
-    animation: animate 8s linear infinite;
 }
