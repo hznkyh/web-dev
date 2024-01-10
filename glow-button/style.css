@@ -57,4 +57,5 @@ body {
     background-size: 400%;
     border-radius: 60px;
     filter: blur(20px);
+    animation: animate 8s linear infinite;
 }
